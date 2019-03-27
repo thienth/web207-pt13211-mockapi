@@ -1,0 +1,13 @@
+<p>
+  total: 
+    <span *ngIf="publishers == undefined">0</span> 
+    <span *ngIf="publishers != undefined">{{publishers.length}}</span> 
+</p>
+<ul *ngIf="publishers != undefined">
+  <li *ngFor="let p of publishers" 
+    (click)="removePublisher(p.id)"
+  >
+    {{p.id}} - {{p.name}}
+  </li>
+</ul>
+
