@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {PublisherComponent} from './screens/publisher/publisher.component';
 import {BookComponent} from './screens/book/book.component';
-
+import {PublisherAddFormComponent} from './screens/publisher-add-form/publisher-add-form.component'
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'books',
     component: BookComponent
+  },
+  {
+    path: 'publisher-add',
+    component: PublisherAddFormComponent
   }
 ];
 

@@ -1,13 +1,15 @@
-<p>
-  total: 
-    <span *ngIf="publishers == undefined">0</span> 
-    <span *ngIf="publishers != undefined">{{publishers.length}}</span> 
-</p>
-<ul *ngIf="publishers != undefined">
-  <li *ngFor="let p of publishers" 
-    (click)="removePublisher(p.id)"
-  >
-    {{p.id}} - {{p.name}}
-  </li>
-</ul>
+<a routerLink="/publisher-add">Tạo mới</a>
+
+<div class="container" *ngIf="publishers != undefined">
+  <div class="row">
+    <div class="col-3" *ngFor="let p of publishers" >
+      <h4>{{p.name}}</h4>
+      <img [src]="p.avatar" class="img-thumbnail">
+      <p><b>{{p.address}}</b></p>
+      <a routerLink="/publisher/edit/{{p.id}}" class="btn btn-sm btn-primary">Edit</a>
+      &nbsp;
+      <a href="javascript:;" (click)="removePublisher(p.id)" class="btn btn-sm btn-danger">Remove</a>
+    </div>
+  </div>
+</div>
 

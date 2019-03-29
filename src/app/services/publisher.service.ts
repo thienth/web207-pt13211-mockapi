@@ -16,6 +16,10 @@ export class PublisherService {
     return this.httpClient.get<Publisher[]>(`${this.apiURL}`);
   }
 
+  addPublisher(newObject){
+    return this.httpClient.post<Publisher>(`${this.apiURL}`, newObject);
+  }
+
   removePublisherById(pId){
     let removeUrl = this.apiURL + "/" + pId;
     return this.httpClient.delete<Publisher>(`${removeUrl}`);

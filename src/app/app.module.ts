@@ -1,21 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PublisherComponent } from './screens/publisher/publisher.component';
 import { BookComponent } from './screens/book/book.component';
+import { PublisherAddFormComponent } from './screens/publisher-add-form/publisher-add-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PublisherComponent,
-    BookComponent
+    BookComponent,
+    PublisherAddFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
