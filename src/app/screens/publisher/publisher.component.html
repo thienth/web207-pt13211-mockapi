@@ -3,8 +3,12 @@
 <div class="container" *ngIf="publishers != undefined">
   <div class="row">
     <div class="col-3" *ngFor="let p of publishers" >
-      <h4>{{p.name}}</h4>
-      <img [src]="p.avatar" class="img-thumbnail">
+      <h4>
+        <a routerLink="/publishers/{{p.id}}/books">{{p.name}}</a>
+      </h4>
+      <a routerLink="/publishers/{{p.id}}/books">
+        <img [src]="p.avatar" class="img-thumbnail">
+      </a>
       <p><b>{{p.address}}</b></p>
       <a routerLink="/publisher/edit/{{p.id}}" class="btn btn-sm btn-primary">Edit</a>
       &nbsp;

@@ -16,6 +16,10 @@ export class PublisherService {
     return this.httpClient.get<Publisher[]>(`${this.apiURL}`);
   }
 
+  getPublisherById(pId){
+    return this.httpClient.get<Publisher>(`${this.apiURL+"/" + pId}`);
+  }
+
   addPublisher(newObject){
     return this.httpClient.post<Publisher>(`${this.apiURL}`, newObject);
   }

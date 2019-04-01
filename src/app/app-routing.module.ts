@@ -11,7 +11,7 @@ const routes: Routes = [
     component: PublisherComponent
   },
   {
-    path: 'books',
+    path: 'publishers/:pId/books',
     component: BookComponent
   },
   {

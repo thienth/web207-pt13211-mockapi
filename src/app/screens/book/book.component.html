@@ -1,4 +1,6 @@
-<p>
-  book works!
-</p>
-<button (click)="serviceBookWork()">click me</button>
+<div *ngIf="books != undefined && publisher != undefined">
+  <h2>{{publisher.name}}</h2>
+  <ul>
+    <li *ngFor="let b of books">{{b.name}} - {{b.price}}</li>
+  </ul>
+</div>
