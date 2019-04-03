@@ -32,6 +32,7 @@ export class PublisherAddFormComponent implements OnInit {
   }
 
   saveForm(){
+    this.createForm.controls.name.value
     // lay ra du lieu dc dien vao tu form
     // let data = {
     //   name: this.name, 
