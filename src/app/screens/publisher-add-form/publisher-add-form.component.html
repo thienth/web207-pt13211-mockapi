@@ -1,32 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
-      <div class="form-group">
-          <label for="">Tên nhà xuất bản</label>
-          <input type="text" class="form-control" [(ngModel)]="name">
-      </div>
-      <div class="form-group">
-          <label for="">Ảnh đại diện</label>
-          <input type="text" class="form-control" [(ngModel)]="avatar">
-      </div>
-      <div class="form-group">
-          <label for="">Địa chỉ</label>
-          <input type="text" class="form-control" [(ngModel)]="address">
-      </div>
-      <div class="form-group">
-          <label for="">Mô tả</label>
-          <textarea class="form-control" [(ngModel)]="description" rows="10"></textarea>
-      </div>
-      <div class="text-center">
-          <button (click)="saveForm()" class="btn btn-sm btn-primary" type="button">Lưu</button>
-          &nbsp;
-          <a routerLink="/" class="btn btn-sm btn-danger">Hủy</a>
+        <pre>{{createForm.controls.name.value | json}} </pre>
+      <form novalidate [formGroup]="createForm">
+        <div class="form-group">
+            <label for="">Tên nhà xuất bản</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="createForm.controls.name.errors 
+                        && (createForm.controls.name.dirty
+                        || createForm.controls.name.touched)">
+                <span class="text-danger" 
+                    *ngIf="createForm.controls.name.errors.required">Name is required!</span>
+                  <span class="text-danger" 
+                  *ngIf="createForm.controls.name.errors.minlength">Name is at least 4 characters!</span>
+            </div>
         </div>
+        <div class="form-group">
+            <label for="">Ảnh đại diện</label>
+            <input type="text" class="form-control" formControlName="avatar">
+        </div>
+        <div class="form-group">
+            <label for="">Địa chỉ</label>
+            <input type="text" class="form-control" formControlName="address">
+        </div>
+        <div class="form-group">
+            <label for="">Mô tả</label>
+            <textarea class="form-control" formControlName="description" rows="10"></textarea>
+        </div>
+        <div class="text-center">
+            <button (click)="saveForm()" class="btn btn-sm btn-primary" type="button">Lưu</button>
+            &nbsp;
+            <a routerLink="/" class="btn btn-sm btn-danger">Hủy</a>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
-<p>{{name}}</p>
-<p>{{avatar}}</p>
-<p>{{address}}</p>
-<p>{{description}}</p>
