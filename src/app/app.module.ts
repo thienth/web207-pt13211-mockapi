@@ -9,6 +9,7 @@ import { PublisherComponent } from './screens/publisher/publisher.component';
 import { BookComponent } from './screens/book/book.component';
 import { PublisherAddFormComponent } from './screens/publisher-add-form/publisher-add-form.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { PublisherAddFormComponent } from './screens/publisher-add-form/publishe
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
