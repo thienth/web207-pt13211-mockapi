@@ -1,3 +1,5 @@
+<app-demooutput (increase)="onIncrease()"></app-demooutput>
+<h2>Đếm: {{count}}</h2>
 <p *ngIf="alertContent != null">
     <ngb-alert [type]="alertType" (close)="close()">
         <strong>{{alertContent}}</strong>

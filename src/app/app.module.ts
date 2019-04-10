@@ -10,12 +10,14 @@ import { BookComponent } from './screens/book/book.component';
 import { PublisherAddFormComponent } from './screens/publisher-add-form/publisher-add-form.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { DemooutputComponent } from './components/demooutput/demooutput.component';
 @NgModule({
   declarations: [
     AppComponent,
     PublisherComponent,
     BookComponent,
-    PublisherAddFormComponent
+    PublisherAddFormComponent,
+    DemooutputComponent
   ],
   imports: [
     BrowserModule,

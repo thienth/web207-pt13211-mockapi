@@ -9,6 +9,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'pt13211';
 
+  count = 0;
+
   alertContent = "Demo alert Success!";
   alertType = 'success';
   closeResult: string;
@@ -21,5 +23,9 @@ export class AppComponent {
 
   open(content) {
     this.modalService.open(content);
+  }
+
+  onIncrease(){
+    this.count = this.count + 1;
   }
 }
